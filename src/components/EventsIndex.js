@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 import TheNavbar from "./TheNavbar"
@@ -129,9 +129,3 @@ const Events = () => {
 
 export default Events
 
-  {/* <iframe
-    title={id}
-    width="200"
-    height="200"
-    src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyALd_bYvfEc51wNsGxL8ZHFHjYk4aHi_mA&q=${venue.latitude},${venue.longitude}`}>
-  </iframe> */}
