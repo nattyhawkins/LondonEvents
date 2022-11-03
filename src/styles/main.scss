@@ -1,4 +1,9 @@
 .event-card{
+  cursor: pointer;
+  transition: transform .2s;
+  &:hover{
+    transform: scale(1.1);
+  }
   a{
     text-decoration: none;
     color: black;
@@ -11,7 +16,10 @@
   }
 }
 
-// .icon-map::after{
-//   content: "\e61c";
-//   width: 10px;
-// }
+.icon{
+  width: 16px;
+}
+
+.filter{
+  display: flex;
+}
