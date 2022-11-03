@@ -1,7 +1,9 @@
+
 import { useEffect, useState } from 'react'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 
+import TheNavbar from "./TheNavbar"
 // import Calendar from './Calendar'
 import ReactDatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
@@ -70,7 +72,7 @@ const Events = () => {
   
   return (
     <>
-      <h1>Skiddle Api</h1>
+      <TheNavbar />
       <div className="filters">
         <Container className='mt-4'>
           <Row>
