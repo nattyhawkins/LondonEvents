@@ -1,3 +1,46 @@
+$primary: orange;
+$secondary: rgb(9, 78, 91);
+
+body{
+  text-align: center;
+  background: linear-gradient(black, rgba(9, 78, 91));
+  min-height: 100vh;
+}
+
+//The Navbar
+.TheNavbar{
+  background-color: $primary;
+  a{
+    color: $secondary;
+  }
+}
+
+//Home
+.home{
+  background-image: url('/../assets/kyle-head-p6rNTdAPbuk-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .title{
+    background-color: rgba(0,0,0,0.7);
+    padding: 40px;
+    border-radius: 18px;
+    font-size: 30px;
+    font-weight: 900;
+    color: white;
+    margin: 10px 0 ;
+  }
+  .lucky{
+    padding: 10px 40px;
+  }
+}
+
+//event index
 .event-card{
   a{
     text-decoration: none;
@@ -15,3 +58,59 @@
 //   content: "\e61c";
 //   width: 10px;
 // }
+
+//Single Page
+.eventSingle{
+  // background-image: url('https://media.istockphoto.com/photos/blue-defocused-blurred-motion-abstract-background-picture-id1010238190?b=1&k=20&m=1010238190&s=170667a&w=0&h=s7RNBDeGfW-BLfrSgZH2svnghqIbdIsXsChJEKxZf28=');
+  background-position: center;
+  background-size: cover;
+  color: $primary;
+  h1{
+    padding: 30px 5px;
+  }
+  .subhead{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px 5px 40px 5px;
+
+    h3{
+      font-size: 1.3em;
+    }
+  }
+  h2{
+    // text-decoration: underline;
+    small{
+      font-size: 0.5em;
+    }
+  }
+  button{
+    width: 300px;
+
+  }
+  p{
+    margin: 0;
+  }
+  .desc{
+      font-style: italic;
+  }
+  
+  .infoDiv{
+    text-align: left;
+    border-left: 1px solid $primary;
+    padding-left: 20px;
+    margin-top: 30px;
+  }
+  .imageBox{
+    text-align: right;
+  }
+  .singleImage {
+    border: 5px solid $primary;
+    width: 300px;
+    border-radius: 18px;
+  }
+  .mapBox{
+    display: flex;
+    height: 100%;
+    align-items: center;
+  }
+}
