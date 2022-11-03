@@ -5,12 +5,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import axios from "axios"
 import { useState, useEffect } from "react"
 import { Col, Container, Row } from "react-bootstrap"
+import { useParams } from "react-router-dom"
 
 import TheNavbar from "./TheNavbar"
 
-const EventSingle = () => {
+const EventSingle = ({ luckyId }) => {
 
-  // const { id } = useParams()
+  let { id } = useParams()
+  !id && (id = luckyId)
+
   const [ event, setEvent ] = useState(null)
 
   useEffect(() => {
@@ -18,7 +21,7 @@ const EventSingle = () => {
       try {
         const apiKey = 'api_key=7544cdafe70d0b9d8a15ae17a08a53fd'
         //temporary single event id
-        const id = '36201809'
+        // const id = '36201809'
         const { data } = await axios.get(`https://www.skiddle.com/api/v1/events/${id}/?${apiKey}&descriptions=1`)
         setEvent(data.results)
         console.log(data.results)
@@ -29,7 +32,7 @@ const EventSingle = () => {
     getEvent()
   }, [])
 
-  function handleSearch(){
+  function findTickets(){
     window.open(
       `https://www.google.com/search?q=${event.eventname}`,
       '_blank' 
@@ -46,14 +49,14 @@ const EventSingle = () => {
             <>
               <h1>{event.eventname}</h1>
               <div className="subhead">
-              {event.genres.map(({ name, genreid }) => {
-                return <>
-                  <h3 key={genreid}>{name}</h3><h3>&#x2022;</h3>
-                </>
+              {event.genres && event.genres.map(({ name, genreid }) => {
+                return <div key={genreid} className="d-flex">
+                    <h3>{name}</h3>
+                  </div>
               })}
               {event.eventcode && 
                 <>
-                  <h3>{event.eventcode}</h3><h3>&#x2022;</h3>
+                  <h3>{event.eventcode}</h3>
                 </>}
               {event.tickets ? 
                 <>
@@ -64,13 +67,12 @@ const EventSingle = () => {
                   <h3>SOLD OUT</h3>
                 </>}
               </div>
-              
+            
               <Row className="mb-4">
                 <Col className="imageBox sm-text-center">
                   <img src={event.largeimageurl} className="singleImage" alt="event"/>
                 </Col>
                 <Col className="d-flex flex-column justify-content-end">
-                  <button onClick={handleSearch} className="btn btn-info">Find Tickets</button>
                   <div className="infoDiv">
                     <h2>Description <small>by Organiser</small></h2>
                     <p className="desc">{event.description}</p>
@@ -83,6 +85,7 @@ const EventSingle = () => {
                   </div>
                 </Col>
               </Row>
+              <button onClick={findTickets} className="btn btn-warning">Find Tickets</button>
               <hr />
               <Row className="mt-4">
                 <div>
@@ -99,7 +102,6 @@ const EventSingle = () => {
             :
             <h1>something went wrong</h1>
           }
-       
         </Container>
 
       </main>
