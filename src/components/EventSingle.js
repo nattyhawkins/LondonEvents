@@ -6,6 +6,7 @@ import axios from "axios"
 import { useState, useEffect } from "react"
 import { Col, Container, Row } from "react-bootstrap"
 import { useParams } from "react-router-dom"
+import Footer from "./Footer"
 
 import TheNavbar from "./TheNavbar"
 
@@ -43,8 +44,9 @@ const EventSingle = ({ luckyId }) => {
   return (
     <>
       <main className="eventSingle">
+        {!luckyId && <TheNavbar />}
         <Container>
-          {!luckyId && <TheNavbar />}
+          
           {event ? 
             <>
               <h1>{event.eventname}</h1>
@@ -88,7 +90,7 @@ const EventSingle = ({ luckyId }) => {
               <button onClick={findTickets} className="btn btn-warning">Find Tickets</button>
               <hr />
               <Row className="mt-4">
-                <div>
+                <div className="mapBox">
                   <iframe
                   title={event.id}
                   width="70%"
@@ -103,7 +105,7 @@ const EventSingle = ({ luckyId }) => {
             <h1>something went wrong</h1>
           }
         </Container>
-
+        <Footer />
       </main>
     </>
     

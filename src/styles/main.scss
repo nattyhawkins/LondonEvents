@@ -1,6 +1,6 @@
 $primary: orange;
 $secondary: orangered;
-$NavColour: rgb(9, 78, 91);
+$NavColour: rgb(19, 61, 69);
 @font-face{
   font-family: roboto-regular;
   src: url('Roboto-Regular.ttf');
@@ -32,17 +32,18 @@ body{
   z-index: 1100;
   a{
     color: $secondary;
+    font-weight: 900;
   }
   .slogan{
     font-size: 35px;
-    font-family: Ledlight;
+    font-family: Neonlight;
     color: $primary;
     margin-left: 20px;
   }
 }
 //Home
 .home{
-  background-image: url('/../assets/kyle-head-p6rNTdAPbuk-unsplash.jpg');
+  background-image: url('/../assets/festival1.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -51,17 +52,23 @@ body{
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  .btn{
+    background-color: rgba(0, 0, 0, 0.7);
+    margin: 200px 0 -70px 0;
+    border-radius: 30px;
+  }
   .title{
-    background-color: rgba(0,0,0,0.7);
     padding: 40px;
-    border-radius: 18px;
     font-size: 30px;
-    font-weight: 900;
-    color: white;
-    margin: 10px 0 ;
+    font-family: Neonlight;
+    color: $primary;
+    box-shadow: 0 0 100px rgb(255, 239, 199);
   }
   .lucky{
+    color: $secondary;
+    font-size: large;
     padding: 10px 40px;
+    font-family: roboto-regular;
   }
 }
 //event index
@@ -74,7 +81,6 @@ body{
     transform: scale(1.1);
   }
   .card{
-    box-shadow: 0 0 25px black;
     border: 1px solid $primary;
     background-color: rgba(0,0,0,0.4);
     // background-color: rgba(255,255,255,0.1);
@@ -137,7 +143,7 @@ body{
 //Filters
 .filters{
   padding-bottom: 20px;
-  padding-left: 40px;
+
   background-color: black;
   height: 90px;
   position: sticky;
@@ -148,6 +154,7 @@ body{
     flex-direction: row;
     align-items: flex-end;
     justify-content: space-between;
+    padding: 0 25px;
   }
   .filters-left{
     display: flex;
@@ -251,11 +258,23 @@ body{
     border-radius: 18px;
   }
   .mapBox{
-    display: flex;
-    height: 100%;
-    align-items: center;
+    // display: flex;
+    // height: 100%;
+    // align-items: center;
+    margin-bottom: 30px;
   }
   hr{
     border: 1px solid $primary;
+  }
+}
+
+//Footer
+footer{
+  padding-bottom: 20px;
+  p{
+    color: white;
+    text-align: right;
+    font-size: small;
+    font-family: roboto-light;
   }
 }

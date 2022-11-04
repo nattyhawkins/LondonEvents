@@ -6,6 +6,7 @@ import EventLucky from './components/EventLucky'
 
 
 
+
 const App = () => {
 
   
@@ -21,6 +22,7 @@ const App = () => {
           <Route path='/events/lucky' element={<EventLucky/>} />
         </Routes>
       </BrowserRouter>
+  
     </>
   )
 }

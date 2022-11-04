@@ -15,6 +15,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationDot, faCalendarDays, faClock, faSterlingSign, faUser } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 import Filters from './Filters'
+import Footer from './Footer'
 
 const Events = () => {
 
@@ -81,6 +82,7 @@ const Events = () => {
             }
           </Row>
         </Container>
+        <Footer />
       </main>
     </>
   )
