@@ -53,29 +53,38 @@ const Filters = ({ eventCode, setEventCode, checked, setChecked, search, setSear
   return (
     <div className="filters">
       <Container className='mt-4'>
-        <Row>
-        <Col sm="4" md="4" lg="4" className="filter mb-4">
-          <label htmlFor="selectEventType">Type of Event</label>
-          <select onChange={typeChange} name="selectEventType">
-            {eventTypes.map(type => <option key={Object.keys(type)} value={Object.keys(type)}>{Object.values(type)}</option>)}
-          </select>
-          <label htmlFor="calendar">Pick a Date</label>
-          <ReactDatePicker 
-            name="calendar"
-            selected={selectedDate} 
-            onChange={dateChange}
-            dateFormat='dd/MM/yyyy'  
-            minDate={new Date()}
-          />
-          <form onSubmit={handleSearch}>
-            <input type="search" id="search" name="search" onChange={handleInput} placeholder='Search Events'/>
-          </form>
-          <label>
-            <input type="checkbox" checked={checked} onChange={() => setChecked(!checked)}/>
-            Tickets Available Only
-          </label>
-          
-        </Col>
+        <Row className="filters-row">
+          <div className="filters-container">
+          {/* <Col className="filter-col mb-4 col-8 offset-2 col-sm-6 offset-sm-0 col-md-4 offset-md-0 col-lg-3 offset-lg-0"> */}
+            <div className="type-container">
+              <label htmlFor="selectEventType">Type of Event</label>
+              <select onChange={typeChange} name="selectEventType">
+                {eventTypes.map(type => <option key={Object.keys(type)} value={Object.keys(type)}>{Object.values(type)}</option>)}
+              </select>
+            </div>
+            <div className="date-container">
+              <label htmlFor="calendar">Pick a Date</label>
+              <ReactDatePicker 
+                name="calendar"
+                selected={selectedDate} 
+                onChange={dateChange}
+                dateFormat='dd/MM/yyyy'  
+                minDate={new Date()}
+              />
+            </div>
+            <div className="search-container">
+              <form onSubmit={handleSearch}>
+                <input type="search" id="search" name="search" onChange={handleInput} placeholder='Search Events'/>
+              </form>
+            </div>
+            <div className="tickets-container">
+              <label>
+                <input type="checkbox" checked={checked} onChange={() => setChecked(!checked)}/>
+                Tickets Available Only
+              </label>
+            </div>
+          {/* </Col> */}
+          </div>
         </Row>
       </Container>
     </div>
