@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap'
 
 import FiltersLucky from './FiltersLucky'
 
-const Filters = ({ eventCode, setEventCode, checked, setChecked, search, setSearch, selectedDate, setSelectedDate, setMinDate, setMaxDate, setForSale, setInput, input, setSelectValue }) => {
+const Filters = ({ eventCode, setEventCode, checked, setChecked, search, setSearch, selectedDate, setSelectedDate, setMinDate, setMaxDate, setForSale, setInput, input, setSelectValue}) => {
 
   const handleInput = (e) => {
     setInput(e.target.value)
