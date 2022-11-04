@@ -32,25 +32,26 @@ const FiltersLucky = ({ eventCode, setEventCode, selectedDate, setSelectedDate, 
   }
 
   return (
-    <>
+    <div className='filters-left'>
       {/* <Col className="filter-col mb-4 col-8 offset-2 col-sm-6 offset-sm-0 col-md-4 offset-md-0 col-lg-3 offset-lg-0"> */}
       <div className="type-container">
-        <label htmlFor="selectEventType">Type of Event</label>
-        <select onChange={typeChange} name="selectEventType">
+        <label htmlFor="selectEventType">Type</label>
+        <select className="filter-input" onChange={typeChange} name="selectEventType">
           {eventTypes.map(type => <option key={Object.keys(type)} value={Object.keys(type)}>{Object.values(type)}</option>)}
         </select>
       </div>
       <div className="date-container">
-        <label htmlFor="calendar">Pick a Date</label>
+        <label htmlFor="calendar">Date</label>
         <ReactDatePicker 
           name="calendar"
           selected={selectedDate} 
           onChange={dateChange}
           dateFormat='dd/MM/yyyy'  
           minDate={new Date()}
+          className="filter-input"
         />
       </div>
-    </>
+    </div>
     
   )
 }
