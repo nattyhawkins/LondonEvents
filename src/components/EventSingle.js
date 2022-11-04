@@ -30,7 +30,7 @@ const EventSingle = ({ luckyId }) => {
       }
     }
     getEvent()
-  }, [])
+  }, [id])
 
   function findTickets(){
     window.open(
@@ -80,7 +80,7 @@ const EventSingle = ({ luckyId }) => {
                   <div className="infoDiv">
                     <p className='mb-0'><FontAwesomeIcon icon={faLocationDot}/>  {event.venue.name}</p>
                     <p className='mb-0'><FontAwesomeIcon icon={faCalendarDays}/>  {event.date}  <FontAwesomeIcon icon={faClock}/>  {event.openingtimes.doorsopen} till {event.openingtimes.doorsclose}</p>
-                    <p className='mb-0'><FontAwesomeIcon icon={faSterlingSign}/>  { event.entryprice ? `£${event.entryprice}` : 'Free admission' }</p>
+                    <p className='mb-0'><FontAwesomeIcon icon={faSterlingSign}/>  { event.entryprice ? `${event.entryprice}` : 'Free admission' }</p>
                     <p className='mb-0'><FontAwesomeIcon icon={faUser}/>  { (!event.minage || event.minage === '0') ? 'No age restriction' : `Minimum age ${event.minage}`}</p>
                   </div>
                 </Col>

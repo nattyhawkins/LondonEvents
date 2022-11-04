@@ -21,7 +21,7 @@ const EventLucky = () => {
         const apiKey = 'api_key=7544cdafe70d0b9d8a15ae17a08a53fd'
         const { data } = await axios.get(`https://www.skiddle.com/api/v1/events/?${apiKey}&ticketsavailable=true`)
         setEvents(data.results)
-        console.log(data.results[0].id)
+        console.log(data.results)
         
       } catch (err) {
         console.log(err)
@@ -30,18 +30,18 @@ const EventLucky = () => {
     getEvents()
   }, [])
 
-  //events is still empty when this runs
   useEffect(() => {
+    
     console.log(events)
     const randomIndex = Math.floor(Math.random() * events.length)
-    setLuckyId(events[randomIndex].id)
+    events.length > 0 && setLuckyId(events[randomIndex].id)
   }, [events])
 
 return (
   <>
     {/* <Filters eventCode={eventCode} setEventCode={setEventCode} checked={checked} setChecked={setChecked} search={search} setSearch={setSearch} selectedDate={selectedDate} setSelectedDate={setSelectedDate} setMinDate={setMinDate} setMaxDate={setMaxDate} setForSale={setForSale}/> */}
     {/* test id = '36201809' */}
-    <EventSingle luckyId={luckyId}/>
+    {luckyId.length > 0 && <EventSingle luckyId={luckyId}/>}
   </>
 )
 
