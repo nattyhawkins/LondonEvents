@@ -42,7 +42,7 @@ const EventSingle = ({ luckyId }) => {
 
   return (
     <>
-      <TheNavbar />
+      {!luckyId && <TheNavbar />}
       <main className="eventSingle">
         <Container>
           {event ? 
