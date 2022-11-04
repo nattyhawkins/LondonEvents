@@ -1,6 +1,6 @@
 import ReactDatePicker from 'react-datepicker'
 
-const FiltersLucky = ({ eventCode, setEventCode, selectedDate, setSelectedDate, setMinDate, setMaxDate }) => {
+const FiltersLucky = ({ eventCode, setEventCode, selectedDate, setSelectedDate, setMinDate, setMaxDate, selectValue, setSelectValue }) => {
   const eventTypes = [ 
     { '': 'All'},
     { '&eventcode=FEST': 'Festivals' },
@@ -17,11 +17,14 @@ const FiltersLucky = ({ eventCode, setEventCode, selectedDate, setSelectedDate, 
     { '&eventcode=ARTS': 'The Arts' },
   ]
   
+  // const [ selectValue, setSelectValue ] = useState('All')
+
   const typeChange = (e) => {
     setEventCode(e.target.value)
     console.log(eventCode)
+    setSelectValue(e.target.id)
   }
-
+  console.log(selectValue)
   const dateChange = (date) => {
     setSelectedDate(date)
     const minDateFormat = `&minDate=${date.toISOString().split('T')[0]}`
@@ -36,8 +39,8 @@ const FiltersLucky = ({ eventCode, setEventCode, selectedDate, setSelectedDate, 
       {/* <Col className="filter-col mb-4 col-8 offset-2 col-sm-6 offset-sm-0 col-md-4 offset-md-0 col-lg-3 offset-lg-0"> */}
       <div className="type-container">
         <label htmlFor="selectEventType">Type</label>
-        <select className="filter-input" onChange={typeChange} name="selectEventType">
-          {eventTypes.map(type => <option key={Object.keys(type)} value={Object.keys(type)}>{Object.values(type)}</option>)}
+        <select className="filter-input" onChange={typeChange} value={selectValue} name="selectEventType">
+          {eventTypes.map(type => <option key={Object.keys(type)} value={Object.keys(type)} id={Object.values(type)}>{Object.values(type)}</option>)}
         </select>
       </div>
       <div className="date-container">

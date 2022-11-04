@@ -1,8 +1,8 @@
-
+import { useState } from "react"
 import { Container, Nav, Navbar } from "react-bootstrap"
 import { Link } from "react-router-dom"
 
-const TheNavbar = ({ setEventCode, setSelectedDate, setMinDate, setMaxDate, setSearch, setForSale, setChecked, setInput }) => {
+const TheNavbar = ({ setEventCode, setSelectedDate, setMinDate, setMaxDate, setSearch, setForSale, setChecked, setInput, setSelectValue }) => {
 
   const resetAll = () => {
     console.log('reset')
@@ -13,6 +13,7 @@ const TheNavbar = ({ setEventCode, setSelectedDate, setMinDate, setMaxDate, setS
     setForSale('')
     setChecked(false)
     setInput('')
+    setSelectValue('All')
     setSelectedDate(new Date())
   }
 
@@ -20,7 +21,7 @@ const TheNavbar = ({ setEventCode, setSelectedDate, setMinDate, setMaxDate, setS
   return (
     <Navbar expand="sm" className="TheNavbar">
       <Container>
-        <Nav.Link to="/" className="slogan" >Discover London</Nav.Link>
+        <Nav.Link as={Link} to="/" className="slogan" >Discover London</Nav.Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav"/>
         <Navbar.Collapse id="basic-navbar-nav" className='justify-content-end'>
           <Nav>
