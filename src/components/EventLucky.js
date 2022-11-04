@@ -2,7 +2,6 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import { Container } from "react-bootstrap"
 import EventSingle from "./EventSingle"
-import Filters from "./Filters"
 import FiltersLucky from "./FiltersLucky"
 import TheNavbar from "./TheNavbar"
 
