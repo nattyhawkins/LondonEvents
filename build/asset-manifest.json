@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c3577738.css",
+    "main.js": "/static/js/main.be21386c.js",
+    "static/media/festival1.jpg": "/static/media/festival1.1939995669e72bdbbaf8.jpg",
+    "static/media/Ledlight.otf": "/static/media/Ledlight.d0a35b4c71ae9bfe32b7.otf",
+    "static/media/Roboto-Regular.ttf": "/static/media/Roboto-Regular.fc2b5060f7accec5cf74.ttf",
+    "static/media/Roboto-Light.ttf": "/static/media/Roboto-Light.333da16a3f3cc391d087.ttf",
+    "static/media/Neonlight.ttf": "/static/media/Neonlight.b0f581c427424c101e20.ttf",
+    "index.html": "/index.html",
+    "main.c3577738.css.map": "/static/css/main.c3577738.css.map",
+    "main.be21386c.js.map": "/static/js/main.be21386c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c3577738.css",
+    "static/js/main.be21386c.js"
+  ]
+}
