@@ -9,6 +9,16 @@ $NavColour: rgb(9, 78, 91);
   font-family: roboto-light;
   src: url('Roboto-Light.ttf');
 }
+
+@font-face {
+  font-family: Ledlight;
+  src: url('./Ledlight.otf');
+}
+@font-face {
+  font-family: Neonlight;
+  src: url('./Neonlight.ttf');
+}
+
 body{
   text-align: center;
   background: repeating-linear-gradient(black, $NavColour, black 300vh);
@@ -30,6 +40,12 @@ body{
     &::after{
       color: $secondary;
     }
+  }
+  .slogan{
+    font-size: 35px;
+    font-family: Ledlight;
+    color: $primary;
+    margin-left: 20px;
   }
 }
 //Home
