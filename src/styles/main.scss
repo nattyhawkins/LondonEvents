@@ -1,6 +1,8 @@
 $primary: orange;
 $secondary: orangered;
 $NavColour: rgb(19, 61, 69);
+$titlefont: dirtybrush;
+
 @font-face{
   font-family: roboto-regular;
   src: url('Roboto-Regular.ttf');
@@ -19,12 +21,8 @@ $NavColour: rgb(19, 61, 69);
 }
 
 @font-face {
-  font-family: Ledlight;
-  src: url('./Ledlight.otf');
-}
-@font-face {
-  font-family: Neonlight;
-  src: url('./Neonlight.ttf');
+  font-family: dirtybrush;
+  src: url(./DirtyBrush-BZYV.ttf);
 }
 
 body{
@@ -51,8 +49,8 @@ body{
     }
   }
   .slogan{
-    font-size: 35px;
-    font-family: Neonlight;
+    font-size: 45px;
+    font-family: $titlefont;
     color: $primary;
     margin-left: 20px;
   }
@@ -75,8 +73,8 @@ body{
   }
   .title{
     padding: 40px;
-    font-size: 30px;
-    font-family: Neonlight;
+    font-size: 45px;
+    font-family: $titlefont;
     color: $primary;
     box-shadow: 0 0 100px rgb(255, 239, 199);
   }

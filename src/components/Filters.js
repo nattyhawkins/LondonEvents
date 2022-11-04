@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { Container, Row } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 
 import FiltersLucky from './FiltersLucky'
 
