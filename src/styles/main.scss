@@ -123,6 +123,42 @@ body{
   color: orangered;
 }
 
+//Filters
+.filter-comp-container{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  .type-container, .date-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-family: roboto-light;
+    width: 20%;
+  }  
+  select{
+    height: 30px;
+  }
+  label{
+    font-size: 0.85rem;
+    &:first-of-type{
+      width: 80.3px;
+    }
+  }
+  @media (max-width: 767px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .type-container, .date-container{
+    align-items: center;
+    justify-content: center;
+    margin: 3px;
+    flex-direction: row;
+    width: 100%;
+  }
+}
 
 .filters{
   background-color: lighten($navbar, 10%);
@@ -133,6 +169,20 @@ body{
   position: sticky;
   top: 56px;
   z-index: 1100;
+  .cal-buttton-container{
+    .cal{
+      width: 105px;
+      // display: flex;
+      // justify-content: flex-end;
+      // align-items: flex-end;
+    }
+    display: flex;
+    button{
+      margin-left: 10px;
+      height: 32px;
+      width: 50px;
+    }
+  }
   .filters-container{
     display: flex;
     flex-direction: row;
@@ -154,9 +204,10 @@ body{
     font-size: 0.85rem;
   }
   .react-datepicker-wrapper{
-    width: 200px;
+    width: 100px;
   }
   @media (max-width: 767px) {
+    height: 180px;
     .filters-container{
       flex-direction: column;
       align-items: center;
@@ -171,6 +222,7 @@ body{
     }
   }
 }
+
 
 //Single Page
 .eventSingle{
@@ -234,5 +286,4 @@ body{
     align-items: center;
   }
 }
-
 

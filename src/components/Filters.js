@@ -1,41 +1,14 @@
-import { useEffect } from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
-import ReactDatePicker from 'react-datepicker'
+import { useEffect, useState } from 'react'
+import { Container, Row } from 'react-bootstrap'
+
+import FiltersLucky from './FiltersLucky'
 
 const Filters = ({ eventCode, setEventCode, checked, setChecked, search, setSearch, selectedDate, setSelectedDate, setMinDate, setMaxDate, setForSale }) => {
-  let input = ''
-  const eventTypes = [ 
-    { '': 'All'},
-    { '&eventcode=FEST': 'Festivals' },
-    { '&eventcode=LIVE': 'Live music' },
-    { '&eventcode=CLUB': 'Clubbing/Dance music' },
-    { '&eventcode=DATE': 'Dating event' },
-    { '&eventcode=THEATRE': 'Theatre/Dance' },
-    { '&eventcode=COMEDY': 'Comedy' },
-    { '&eventcode=EXHIB': 'Exhibitions and Attractions' },
-    {'&eventcode=KIDS': 'Kids/Family event' },
-    { '&eventcode=BARPUB': 'Bar/Pub event' },
-    { '&eventcode=LGB': 'Gay/Lesbian event' },
-    { '&eventcode=SPORT': 'Sporting event' },
-    { '&eventcode=ARTS': 'The Arts' },
-  ]
-  
-  const typeChange = (e) => {
-    setEventCode(e.target.value)
-    console.log(eventCode)
-  }
-
-  const dateChange = (date) => {
-    setSelectedDate(date)
-    const minDateFormat = `&minDate=${date.toISOString().split('T')[0]}`
-    const maxDateFormat = `&maxDate=${date.toISOString().split('T')[0]}`
-    setMinDate(minDateFormat)
-    setMaxDate(maxDateFormat)
-    console.log(minDateFormat, maxDateFormat)
-  }
+  // let input = ''
+  const [ input, setInput ] = useState()
 
   const handleInput = (e) => {
-    input = `&keyword=${e.target.value}`
+    setInput(`&keyword=${e.target.value}`)
   }
 
   const handleSearch = (e) => {
@@ -54,24 +27,8 @@ const Filters = ({ eventCode, setEventCode, checked, setChecked, search, setSear
     <div className="filters">
       <Container className='mt-4'>
         <Row className="filters-row">
-          <div className="filters-container">
-          {/* <Col className="filter-col mb-4 col-8 offset-2 col-sm-6 offset-sm-0 col-md-4 offset-md-0 col-lg-3 offset-lg-0"> */}
-            <div className="type-container">
-              <label htmlFor="selectEventType">Type of Event</label>
-              <select onChange={typeChange} name="selectEventType">
-                {eventTypes.map(type => <option key={Object.keys(type)} value={Object.keys(type)}>{Object.values(type)}</option>)}
-              </select>
-            </div>
-            <div className="date-container">
-              <label htmlFor="calendar">Pick a Date</label>
-              <ReactDatePicker 
-                name="calendar"
-                selected={selectedDate} 
-                onChange={dateChange}
-                dateFormat='dd/MM/yyyy'  
-                minDate={new Date()}
-              />
-            </div>
+        <div className="filters-container">
+            <FiltersLucky eventCode={eventCode} setEventCode={setEventCode} selectedDate={selectedDate} setSelectedDate={setSelectedDate} setMinDate={setMinDate} setMaxDate={setMaxDate} />
             <div className="search-container">
               <form onSubmit={handleSearch}>
                 <input type="search" id="search" name="search" onChange={handleInput} placeholder='Search Events'/>

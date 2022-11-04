@@ -47,7 +47,7 @@ const Events = () => {
   
   return (
     <>
-      <TheNavbar />
+      <TheNavbar setEventCode={setEventCode} selectedDate={selectedDate} setMinDate={setMinDate} setMaxDate={setMaxDate} setSearch={setSearch} setForSale={setForSale} setChecked={setChecked} />
       <Filters eventCode={eventCode} setEventCode={setEventCode} checked={checked} setChecked={setChecked} search={search} setSearch={setSearch} selectedDate={selectedDate} setSelectedDate={setSelectedDate} setMinDate={setMinDate} setMaxDate={setMaxDate} setForSale={setForSale}/>
       <main className="events-page">
         <Container className='mt-4'>
