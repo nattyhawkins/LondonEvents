@@ -1,11 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { Container, Row } from 'react-bootstrap'
 
 import FiltersLucky from './FiltersLucky'
 
-const Filters = ({ eventCode, setEventCode, checked, setChecked, search, setSearch, selectedDate, setSelectedDate, setMinDate, setMaxDate, setForSale }) => {
+const Filters = ({ eventCode, setEventCode, checked, setChecked, search, setSearch, selectedDate, setSelectedDate, setMinDate, setMaxDate, setForSale, setInput, input }) => {
   // let input = ''
-  const [ input, setInput ] = useState()
 
   const handleInput = (e) => {
     setInput(`&keyword=${e.target.value}`)
