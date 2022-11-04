@@ -22,9 +22,10 @@ const FiltersLucky = ({ eventCode, setEventCode, selectedDate, setSelectedDate, 
   const typeChange = (e) => {
     setEventCode(e.target.value)
     console.log(eventCode)
-    setSelectValue(e.target.id)
+    setSelectValue(e.target)
+    console.log(e.target)
   }
-  console.log(selectValue)
+
   const dateChange = (date) => {
     setSelectedDate(date)
     const minDateFormat = `&minDate=${date.toISOString().split('T')[0]}`
@@ -33,6 +34,7 @@ const FiltersLucky = ({ eventCode, setEventCode, selectedDate, setSelectedDate, 
     setMaxDate(maxDateFormat)
     console.log(minDateFormat, maxDateFormat)
   }
+
 
   return (
     <div className='filters-left'>

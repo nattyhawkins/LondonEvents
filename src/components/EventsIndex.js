@@ -38,7 +38,6 @@ const Events = () => {
         const ldnCoord = 'latitude=51.509865&longitude=-0.118092&radius=40'
         const { data } = await axios.get(`https://www.skiddle.com/api/v1/events/search/?${apiKey}&${ldnCoord}&descriptions=1&limit=100${eventCode}${minDate}${maxDate}${search}${forSale}`)
         setEvents(data.results)
-        console.log(data.results)
       } catch (err) {
         console.log('here -> ' + err.data)
       }

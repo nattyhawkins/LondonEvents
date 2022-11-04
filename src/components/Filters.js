@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap'
 
 import FiltersLucky from './FiltersLucky'
 
-const Filters = ({ eventCode, setEventCode, checked, setChecked, search, setSearch, selectedDate, setSelectedDate, setMinDate, setMaxDate, setForSale, setInput, input }) => {
+const Filters = ({ eventCode, setEventCode, checked, setChecked, search, setSearch, selectedDate, setSelectedDate, setMinDate, setMaxDate, setForSale, setInput, input, setSelectValue }) => {
 
   const handleInput = (e) => {
     setInput(e.target.value)
@@ -26,7 +26,7 @@ const Filters = ({ eventCode, setEventCode, checked, setChecked, search, setSear
       <Container className='mt-4 filters-container'>
         {/* <Row className="filters-row"> */}
           {/* <div className="filters-container"> */}
-            <FiltersLucky eventCode={eventCode} setEventCode={setEventCode} selectedDate={selectedDate} setSelectedDate={setSelectedDate} setMinDate={setMinDate} setMaxDate={setMaxDate} />
+            <FiltersLucky eventCode={eventCode} setEventCode={setEventCode} selectedDate={selectedDate} setSelectedDate={setSelectedDate} setMinDate={setMinDate} setMaxDate={setMaxDate} setSelectValue={setSelectValue} />
             <div className='filters-right'>
               <div className="tickets-container">
                 <input className="filter-input" type="checkbox" checked={checked} onChange={() => setChecked(!checked)}/>
