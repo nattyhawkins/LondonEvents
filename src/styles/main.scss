@@ -1,5 +1,7 @@
 $primary: orange;
 $secondary: rgb(9, 78, 91);
+$navbar: rgb(0, 38, 48);
+
 @font-face{
   font-family: roboto-regular;
   src:  url('Roboto-Regular.ttf');
@@ -18,7 +20,10 @@ body{
 
 //The Navbar
 .TheNavbar{
-  background-color: rgb(0, 38, 48);
+  background-color: $navbar;
+  position: sticky;
+  top: 0;
+  z-index: 1100;
   a{
     color: orangered;
   }
@@ -111,10 +116,23 @@ body{
   width: 16px;
 }
 
+.no-container{
+  margin-top: 10rem;
+  font-family: roboto-regular;
+  font-size: 1.5rem;
+  color: orangered;
+}
+
 
 .filters{
+  background-color: lighten($navbar, 10%);
+  padding-top: 1px;
   padding-bottom: 20px;
   padding-left: 40px;
+  height: 90px;
+  position: sticky;
+  top: 56px;
+  z-index: 1100;
   .filters-container{
     display: flex;
     flex-direction: row;

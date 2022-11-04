@@ -52,7 +52,7 @@ const Events = () => {
       <main className="events-page">
         <Container className='mt-4'>
           <Row className="events-row">
-            {events.length > 0 && 
+            {events.length > 0 ? 
               events.map(event => {
                 const { id, eventname, date, venue, openingtimes, xlargeimageurl, minage, entryprice } = event
                 const eventDate = new Date(date).toDateString()
@@ -74,6 +74,10 @@ const Events = () => {
                   </Col>
                 )
               })
+              :
+              <Container className='mt-6 no-container'>
+                No events found.
+              </Container>
             }
           </Row>
         </Container>
