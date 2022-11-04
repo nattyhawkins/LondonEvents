@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
+import { Container } from "react-bootstrap"
 import EventSingle from "./EventSingle"
 import Filters from "./Filters"
 import FiltersLucky from "./FiltersLucky"
@@ -40,8 +41,10 @@ const EventLucky = () => {
 return (
   <>
     <TheNavbar />
-    <div className="filters-container">
-      <FiltersLucky eventCode={eventCode} setEventCode={setEventCode} selectedDate={selectedDate} setSelectedDate={setSelectedDate} setMinDate={setMinDate} setMaxDate={setMaxDate} />
+    <div className="filters">
+      <Container className="filters-container mt-5">
+        <FiltersLucky eventCode={eventCode} setEventCode={setEventCode} selectedDate={selectedDate} setSelectedDate={setSelectedDate} setMinDate={setMinDate} setMaxDate={setMaxDate} />
+      </Container>
     </div>
     
     {luckyId.length > 0 && <EventSingle luckyId={luckyId}/>}

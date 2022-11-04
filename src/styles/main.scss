@@ -1,6 +1,6 @@
 $primary: orange;
-$secondary: rgb(9, 78, 91);
-$navbar: rgb(0, 38, 48);
+$secondary: orangered;
+$NavColour: rgb(9, 78, 91);
 
 @font-face{
   font-family: roboto-regular;
@@ -14,18 +14,19 @@ $navbar: rgb(0, 38, 48);
 
 body{
   text-align: center;
-  background: linear-gradient(black, rgba(9, 78, 91));
+  background: repeating-linear-gradient(black, $NavColour, black 300vh);
   min-height: 100vh;
 }
 
 //The Navbar
 .TheNavbar{
-  background-color: $navbar;
+  background-color: $NavColour;
   position: sticky;
   top: 0;
   z-index: 1100;
+  background-color: $NavColour;
   a{
-    color: orangered;
+    color: $secondary;
   }
 }
 
@@ -65,7 +66,10 @@ body{
     transform: scale(1.1);
   }
   .card{
-    box-shadow: 0 0 25px orange;
+    box-shadow: 0 0 25px black;
+    border: 1px solid $primary;
+    background-color: rgba(0,0,0,0.4);
+    // background-color: rgba(255,255,255,0.1);
   }
   a{
     text-decoration: none;
@@ -76,6 +80,8 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     height: 250px;
+    border-radius: 5px 5px 0 0;
+    
     // width: 100%;
   }
   .card-body{
@@ -96,10 +102,11 @@ body{
     max-height: 2.6rem;
     text-overflow: ellipsis;
     width: 100%;
+    color: $primary;
   }
   .card-text{
     font-family: roboto-light;
-    color: rgb(90, 90, 90);
+    color:white;
     font-size: 15px;
     &:first-of-type{
       padding-top: 10px;
@@ -124,44 +131,8 @@ body{
 }
 
 //Filters
-.filter-comp-container{
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-between;
-  .type-container, .date-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: white;
-    font-family: roboto-light;
-    width: 20%;
-  }  
-  select{
-    height: 30px;
-  }
-  label{
-    font-size: 0.85rem;
-    &:first-of-type{
-      width: 80.3px;
-    }
-  }
-  @media (max-width: 767px) {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .type-container, .date-container{
-    align-items: center;
-    justify-content: center;
-    margin: 3px;
-    flex-direction: row;
-    width: 100%;
-  }
-}
-
 .filters{
-  background-color: lighten($navbar, 10%);
+  background-color: lighten($NavColour, 10%);
   padding-top: 1px;
   padding-bottom: 20px;
   padding-left: 40px;
@@ -189,19 +160,39 @@ body{
     align-items: flex-end;
     justify-content: space-between;
   }
+  .filters-left{
+    display: flex;
+    // justify-content: ce;
+
+  }
   .type-container, .date-container, .search-container, .tickets-container{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     color: white;
     font-family: roboto-light;
-    width: 20%;
+    text-align: left;
+    margin: 5px;
   }
-  select{
+  .tickets-container{
+    flex-direction: row;
+    align-items: center;
+    label{
+      margin-left: 5px;
+    }
+  }
+  .filter-input{
     height: 30px;
+    border-radius: 7px;
+    // border: 5px solid $primary;
+    // background-color: $primary;
   }
   label{
     font-size: 0.85rem;
+    width: 100%;
+    color: $secondary;
+    font-weight: bold;
+    
   }
   .react-datepicker-wrapper{
     width: 100px;
@@ -232,7 +223,7 @@ body{
   color: $primary;
   h1{
     padding: 30px 5px;
-    color: orange;
+    color: $primary;
   }
   .subhead{
     display: flex;
@@ -241,21 +232,21 @@ body{
 
     h3{
       font-size: 1.3em;
-      color: orangered;
+      color: $secondary;
     }
   }
   h2{
     // text-decoration: underline;
     small{
       font-size: 0.5em;
-      color: orangered;
+      color: $secondary;
     }
   }
   button{
     width: 910px;
     color: white;
-    background-color: orangered;
-    border: 1px solid orangered
+    background-color: $secondary;
+    border: 1px solid $secondary
 
   }
   p{
@@ -276,7 +267,7 @@ body{
     text-align: right;
   }
   .singleImage {
-    border: 5px solid $primary;
+    border: 1px solid $primary;
     width: 300px;
     border-radius: 18px;
   }
@@ -284,6 +275,9 @@ body{
     display: flex;
     height: 100%;
     align-items: center;
+  }
+  hr{
+    border: 1px solid $primary;
   }
 }
 

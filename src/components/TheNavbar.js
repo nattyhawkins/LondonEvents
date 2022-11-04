@@ -2,7 +2,7 @@
 import { Container, Nav, Navbar } from "react-bootstrap"
 import { Link } from "react-router-dom"
 
-const TheNavbar = ({ setEventCode, setSelectedDate, setMinDate, setMaxDate, setSearch, setForSale, setChecked }) => {
+const TheNavbar = ({ setEventCode, setSelectedDate, setMinDate, setMaxDate, setSearch, setForSale, setChecked,  }) => {
 
   const resetAll = () => {
     console.log('reset')

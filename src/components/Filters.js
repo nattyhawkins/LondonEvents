@@ -25,24 +25,23 @@ const Filters = ({ eventCode, setEventCode, checked, setChecked, search, setSear
 
   return (
     <div className="filters">
-      <Container className='mt-4'>
-        <Row className="filters-row">
-        <div className="filters-container">
+      <Container className='mt-4 filters-container'>
+        {/* <Row className="filters-row"> */}
+          {/* <div className="filters-container"> */}
             <FiltersLucky eventCode={eventCode} setEventCode={setEventCode} selectedDate={selectedDate} setSelectedDate={setSelectedDate} setMinDate={setMinDate} setMaxDate={setMaxDate} />
-            <div className="search-container">
-              <form onSubmit={handleSearch}>
-                <input type="search" id="search" name="search" onChange={handleInput} placeholder='Search Events'/>
-              </form>
+            <div className='filters-right'>
+              <div className="tickets-container">
+                <input className="filter-input" type="checkbox" checked={checked} onChange={() => setChecked(!checked)}/>
+                <label>Tickets Available Only</label>
+              </div>
+              <div className="search-container">
+                <form onSubmit={handleSearch}>
+                  <input className="filter-input" type="search" id="search" name="search" onChange={handleInput} placeholder='Search Events'/>
+                </form>
+              </div>
             </div>
-            <div className="tickets-container">
-              <label>
-                <input type="checkbox" checked={checked} onChange={() => setChecked(!checked)}/>
-                Tickets Available Only
-              </label>
-            </div>
-          {/* </Col> */}
-          </div>
-        </Row>
+          {/* </div> */}
+        {/* </Row> */}
       </Container>
     </div>
   )
