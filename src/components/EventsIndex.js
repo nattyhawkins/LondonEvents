@@ -1,6 +1,5 @@
 
 import { useEffect, useState } from 'react'
-// import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 import TheNavbar from "./TheNavbar"
@@ -26,7 +25,8 @@ const Events = () => {
   const [ forSale, setForSale ] = useState('')
   const [ minDate, setMinDate ] = useState('')
   const [ maxDate, setMaxDate ] = useState('')
-  const [ input, setInput ] = useState()
+  const [ input, setInput ] = useState('')
+  const [ selectValue, setSelectValue ] = useState('All')
   
 
 
@@ -48,10 +48,10 @@ const Events = () => {
   
   return (
     <>
-      <TheNavbar setEventCode={setEventCode} setSelectedDate={setSelectedDate} setMinDate={setMinDate} setMaxDate={setMaxDate} setSearch={setSearch} setForSale={setForSale} setChecked={setChecked} setInput={setInput} />
-      <Filters eventCode={eventCode} setEventCode={setEventCode} checked={checked} setChecked={setChecked} search={search} setSearch={setSearch} selectedDate={selectedDate} setSelectedDate={setSelectedDate} setMinDate={setMinDate} setMaxDate={setMaxDate} setForSale={setForSale} setInput={setInput} input={input} />
+      <TheNavbar setEventCode={setEventCode} setSelectedDate={setSelectedDate} setMinDate={setMinDate} setMaxDate={setMaxDate} setSearch={setSearch} setForSale={setForSale} setChecked={setChecked} setInput={setInput} setSelectValue={setSelectValue} />
+      <Filters eventCode={eventCode} setEventCode={setEventCode} checked={checked} setChecked={setChecked} search={search} setSearch={setSearch} selectedDate={selectedDate} setSelectedDate={setSelectedDate} setMinDate={setMinDate} setMaxDate={setMaxDate} setForSale={setForSale} setInput={setInput} input={input} selectValue={selectValue} setSelectValue={setSelectValue} />
       <main className="events-page">
-        <Container className='mt-4'>
+        <Container className="mt-4">
           <Row className="events-row">
             {events.length > 0 ? 
               events.map(event => {

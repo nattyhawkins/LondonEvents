@@ -4,7 +4,6 @@ import { Container, Row } from 'react-bootstrap'
 import FiltersLucky from './FiltersLucky'
 
 const Filters = ({ eventCode, setEventCode, checked, setChecked, search, setSearch, selectedDate, setSelectedDate, setMinDate, setMaxDate, setForSale, setInput, input }) => {
-  // let input = ''
 
   const handleInput = (e) => {
     setInput(`&keyword=${e.target.value}`)
@@ -12,7 +11,7 @@ const Filters = ({ eventCode, setEventCode, checked, setChecked, search, setSear
 
   const handleSearch = (e) => {
     e.preventDefault()
-    setSearch(input)
+    setSearch(`&keyword=${input}`)
     console.log(search)
   }
 
@@ -35,7 +34,7 @@ const Filters = ({ eventCode, setEventCode, checked, setChecked, search, setSear
               </div>
               <div className="search-container">
                 <form onSubmit={handleSearch}>
-                  <input className="filter-input" type="search" id="search" name="search" onChange={handleInput} placeholder='Search Events'/>
+                  <input className="filter-input" type="search" id="search" name="search" onChange={handleInput} value={input}  placeholder='Search Events'/>
                 </form>
               </div>
             </div>
