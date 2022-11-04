@@ -27,6 +27,7 @@ const Events = () => {
   const [ forSale, setForSale ] = useState('')
   const [ minDate, setMinDate ] = useState('')
   const [ maxDate, setMaxDate ] = useState('')
+  const [ input, setInput ] = useState()
   
 
 
@@ -48,8 +49,8 @@ const Events = () => {
   
   return (
     <>
-      <TheNavbar setEventCode={setEventCode} selectedDate={selectedDate} setMinDate={setMinDate} setMaxDate={setMaxDate} setSearch={setSearch} setForSale={setForSale} setChecked={setChecked} />
-      <Filters eventCode={eventCode} setEventCode={setEventCode} checked={checked} setChecked={setChecked} search={search} setSearch={setSearch} selectedDate={selectedDate} setSelectedDate={setSelectedDate} setMinDate={setMinDate} setMaxDate={setMaxDate} setForSale={setForSale}/>
+      <TheNavbar setEventCode={setEventCode} setSelectedDate={setSelectedDate} setMinDate={setMinDate} setMaxDate={setMaxDate} setSearch={setSearch} setForSale={setForSale} setChecked={setChecked} setInput={setInput} />
+      <Filters eventCode={eventCode} setEventCode={setEventCode} checked={checked} setChecked={setChecked} search={search} setSearch={setSearch} selectedDate={selectedDate} setSelectedDate={setSelectedDate} setMinDate={setMinDate} setMaxDate={setMaxDate} setForSale={setForSale} setInput={setInput} input={input} />
       <main className="events-page">
         <Container className='mt-4'>
           <Row className="events-row">
@@ -76,7 +77,7 @@ const Events = () => {
                 )
               })
               :
-              <Container className='mt-6 no-container'>
+              <Container className='no-container'>
                 No events found.
               </Container>
             }

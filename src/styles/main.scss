@@ -30,9 +30,17 @@ body{
   position: sticky;
   top: 0;
   z-index: 1100;
-  a{
+  a, p{
+    font-family: roboto-regular;
     color: $secondary;
     font-weight: 900;
+    margin: auto;
+    &:hover{
+      color: lighten($secondary, 30%)
+    }
+    &::after{
+      color: $secondary;
+    }
   }
   .slogan{
     font-size: 35px;
@@ -132,14 +140,15 @@ body{
 }
 .icon{
   width: 16px;
-
-  .no-container{
-      margin-top: 10rem;
-      font-family: roboto-regular;
-      font-size: 1.5rem;
-      color: $primary;
-    }
 }
+
+.no-container{
+  margin-top: 10rem;
+  font-family: roboto-regular;
+  font-size: 1.5rem;
+  color: $primary;
+}
+
 //Filters
 .filters{
   padding-bottom: 20px;
