@@ -47,12 +47,12 @@ const Events = () => {
   
   return (
     <>
-      <TheNavbar />
+      <TheNavbar setEventCode={setEventCode} selectedDate={selectedDate} setMinDate={setMinDate} setMaxDate={setMaxDate} setSearch={setSearch} setForSale={setForSale} setChecked={setChecked} />
       <Filters eventCode={eventCode} setEventCode={setEventCode} checked={checked} setChecked={setChecked} search={search} setSearch={setSearch} selectedDate={selectedDate} setSelectedDate={setSelectedDate} setMinDate={setMinDate} setMaxDate={setMaxDate} setForSale={setForSale}/>
       <main className="events-page">
         <Container className='mt-4'>
           <Row className="events-row">
-            {events.length > 0 && 
+            {events.length > 0 ? 
               events.map(event => {
                 const { id, eventname, date, venue, openingtimes, xlargeimageurl, minage, entryprice } = event
                 const eventDate = new Date(date).toDateString()
@@ -74,6 +74,10 @@ const Events = () => {
                   </Col>
                 )
               })
+              :
+              <Container className='mt-6 no-container'>
+                No events found.
+              </Container>
             }
           </Row>
         </Container>

@@ -1,14 +1,13 @@
 $primary: orange;
 $secondary: orangered;
 $NavColour: rgb(9, 78, 91);
-
 @font-face{
   font-family: roboto-regular;
-  src:  url('Roboto-Regular.ttf');
+  src: url('Roboto-Regular.ttf');
 }
 @font-face{
   font-family: roboto-light;
-  src:  url('Roboto-Light.ttf');
+  src: url('Roboto-Light.ttf');
 }
 
 @font-face {
@@ -25,10 +24,12 @@ body{
   background: repeating-linear-gradient(black, $NavColour, black 300vh);
   min-height: 100vh;
 }
-
 //The Navbar
 .TheNavbar{
   background-color: $NavColour;
+  position: sticky;
+  top: 0;
+  z-index: 1100;
   a{
     color: $secondary;
   }
@@ -39,7 +40,6 @@ body{
     margin-left: 20px;
   }
 }
-
 //Home
 .home{
   background-image: url('/../assets/kyle-head-p6rNTdAPbuk-unsplash.jpg');
@@ -64,9 +64,7 @@ body{
     padding: 10px 40px;
   }
 }
-
 //event index
-
 .event-card{
   width: 20rem;
   text-align: left;
@@ -91,7 +89,6 @@ body{
     background-repeat: no-repeat;
     height: 250px;
     border-radius: 5px 5px 0 0;
-    
     // width: 100%;
   }
   .card-body{
@@ -108,7 +105,7 @@ body{
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
-    line-height: 1.3rem;       
+    line-height: 1.3rem;
     max-height: 2.6rem;
     text-overflow: ellipsis;
     width: 100%;
@@ -123,20 +120,29 @@ body{
     }
   }
 }
-
 .row{
   display: flex;
   justify-content: center;
 }
-
 .icon{
   width: 16px;
-}
 
+  .no-container{
+      margin-top: 10rem;
+      font-family: roboto-regular;
+      font-size: 1.5rem;
+      color: $primary;
+    }
+}
 //Filters
 .filters{
   padding-bottom: 20px;
   padding-left: 40px;
+  background-color: black;
+  height: 90px;
+  position: sticky;
+  top: 56px;
+  z-index: 1100;
   .filters-container{
     display: flex;
     flex-direction: row;
@@ -146,7 +152,6 @@ body{
   .filters-left{
     display: flex;
     // justify-content: ce;
-
   }
   .type-container, .date-container, .search-container, .tickets-container{
     display: flex;
@@ -173,7 +178,6 @@ body{
     width: 100%;
     color: $secondary;
     font-weight: bold;
-    
   }
   .react-datepicker-wrapper{
     width: 200px;
@@ -193,10 +197,9 @@ body{
     }
   }
 }
-
 //Single Page
 .eventSingle{
-  // background-image: url('https://media.istockphoto.com/photos/blue-defocused-blurred-motion-abstract-background-picture-id1010238190?b=1&k=20&m=1010238190&s=170667a&w=0&h=s7RNBDeGfW-BLfrSgZH2svnghqIbdIsXsChJEKxZf28=');
+  // background-image: url(‘https://media.istockphoto.com/photos/blue-defocused-blurred-motion-abstract-background-picture-id1010238190?b=1&k=20&m=1010238190&s=170667a&w=0&h=s7RNBDeGfW-BLfrSgZH2svnghqIbdIsXsChJEKxZf28=’);
   background-position: center;
   background-size: cover;
   color: $primary;
@@ -208,7 +211,6 @@ body{
     display: flex;
     justify-content: space-evenly;
     margin: 20px 5px 40px 5px;
-
     h3{
       font-size: 1.3em;
       color: $secondary;
@@ -226,7 +228,6 @@ body{
     color: white;
     background-color: $secondary;
     border: 1px solid $secondary
-
   }
   p{
     margin: 0;
@@ -235,7 +236,6 @@ body{
   .desc{
       font-style: italic;
   }
-  
   .infoDiv{
     text-align: left;
     border-left: 1px solid $primary;
@@ -259,4 +259,3 @@ body{
     border: 1px solid $primary;
   }
 }
-
