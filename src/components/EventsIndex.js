@@ -51,13 +51,13 @@ const Events = () => {
       <Filters eventCode={eventCode} setEventCode={setEventCode} checked={checked} setChecked={setChecked} search={search} setSearch={setSearch} selectedDate={selectedDate} setSelectedDate={setSelectedDate} setMinDate={setMinDate} setMaxDate={setMaxDate} setForSale={setForSale}/>
       <main className="events-page">
         <Container className='mt-4'>
-          <Row>
+          <Row className="events-row">
             {events.length > 0 && 
               events.map(event => {
                 const { id, eventname, date, venue, openingtimes, xlargeimageurl, minage, entryprice } = event
                 const eventDate = new Date(date).toDateString()
                 return (
-                  <Col key={id} sm="4" md="4" lg="4" className='event-card mb-4'>
+                  <Col key={id} className="event-card mb-4 col-8 offset-2 col-sm-6 offset-sm-0 col-md-4 offset-md-0 col-lg-3 offset-lg-0">
                     <Link to={`/events/${id}`}>
                       <Card>
                         <div className="card-image" style={{ backgroundImage: `url(${xlargeimageurl})` }}></div>
@@ -66,7 +66,7 @@ const Events = () => {
                           <Card.Text className='mb-0'><span><FontAwesomeIcon className="icon" icon={faLocationDot}/></span>  {venue.name}</Card.Text>
                           <Card.Text className='mb-0'><span><FontAwesomeIcon className="icon" icon={faCalendarDays}/></span>  {eventDate}</Card.Text>
                           <Card.Text className='mb-0'><span><FontAwesomeIcon className="icon" icon={faClock}/></span>  {openingtimes.doorsopen} till {openingtimes.doorsclose}</Card.Text>
-                          <Card.Text className='mb-0'><span><FontAwesomeIcon className="icon" icon={faSterlingSign}/></span>  { entryprice ? `£${entryprice}` : 'Free admission' }</Card.Text>
+                          <Card.Text className='mb-0'><span><FontAwesomeIcon className="icon" icon={faSterlingSign}/></span>  { entryprice ? `${entryprice}` : 'Free admission' }</Card.Text>
                           <Card.Text className='mb-0'><span><FontAwesomeIcon className="icon" icon={faUser}/></span>  { (!minage || minage === '0') ? 'No age restriction' : `Minimum age ${minage}`}</Card.Text>
                         </Card.Body>
                       </Card>

@@ -1,5 +1,14 @@
 $primary: orange;
 $secondary: rgb(9, 78, 91);
+@font-face{
+  font-family: roboto-regular;
+  src:  url('Roboto-Regular.ttf');
+}
+@font-face{
+  font-family: roboto-light;
+  src:  url('Roboto-Light.ttf');
+}
+
 
 body{
   text-align: center;
@@ -41,11 +50,17 @@ body{
 }
 
 //event index
+
 .event-card{
+  width: 20rem;
+  text-align: left;
   cursor: pointer;
   transition: transform .2s;
   &:hover{
     transform: scale(1.1);
+  }
+  .card{
+    box-shadow: 0 0 25px orange;
   }
   a{
     text-decoration: none;
@@ -55,16 +70,88 @@ body{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 300px;
+    height: 250px;
+    // width: 100%;
   }
+  .card-body{
+    height: 230px;
+    // width: 100%;
+  }
+  .card-title{
+    font-family: roboto-regular;
+    // padding-bottom: 45px;
+    // height: 60px;
+    line-height: 1.3rem;
+    height: 3rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-height: 1.3rem;       
+    max-height: 2.6rem;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
+  .card-text{
+    font-family: roboto-light;
+    color: rgb(90, 90, 90);
+    font-size: 15px;
+    &:first-of-type{
+      padding-top: 10px;
+    }
+  }
+}
+
+.row{
+  display: flex;
+  justify-content: center;
 }
 
 .icon{
   width: 16px;
 }
 
-.filter{
-  display: flex;
+
+.filters{
+  padding-bottom: 20px;
+  padding-left: 40px;
+  .filters-container{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+  .type-container, .date-container, .search-container, .tickets-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-family: roboto-light;
+    width: 20%;
+  }
+  select{
+    height: 30px;
+  }
+  label{
+    font-size: 0.85rem;
+  }
+  .react-datepicker-wrapper{
+    width: 200px;
+  }
+  @media (max-width: 767px) {
+    .filters-container{
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .type-container, .date-container, .search-container, .tickets-container{
+      align-items: center;
+      justify-content: center;
+      margin: 3px;
+      flex-direction: row;
+      width: 100%;
+    }
+  }
 }
 
 //Single Page
