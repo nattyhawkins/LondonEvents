@@ -6,7 +6,7 @@ import FiltersLucky from './FiltersLucky'
 const Filters = ({ eventCode, setEventCode, checked, setChecked, search, setSearch, selectedDate, setSelectedDate, setMinDate, setMaxDate, setForSale, setInput, input }) => {
 
   const handleInput = (e) => {
-    setInput(`&keyword=${e.target.value}`)
+    setInput(e.target.value)
   }
 
   const handleSearch = (e) => {
