@@ -99,6 +99,7 @@ body{
     border: 1px solid $primary;
     background-color: rgba(0,0,0,0.4);
     // background-color: rgba(255,255,255,0.1);
+    // box-shadow: 0 0 10px lighten($primary, 30%);
   }
   a{
     text-decoration: none;
@@ -110,11 +111,9 @@ body{
     background-repeat: no-repeat;
     height: 250px;
     border-radius: 5px 5px 0 0;
-    // width: 100%;
   }
   .card-body{
     height: 230px;
-    // width: 100%;
   }
   .card-title{
     font-family: roboto-regular;
