@@ -1,29 +1,43 @@
 import ReactDatePicker from 'react-datepicker'
+// import { useEffect } from 'react'
 
 const FiltersLucky = ({ eventCode, setEventCode, selectedDate, setSelectedDate, setMinDate, setMaxDate, selectValue, setSelectValue }) => {
+
   const eventTypes = [ 
-    { '': 'All'},
-    { '&eventcode=FEST': 'Festivals' },
-    { '&eventcode=LIVE': 'Live music' },
-    { '&eventcode=CLUB': 'Clubbing/Dance music' },
-    { '&eventcode=DATE': 'Dating event' },
-    { '&eventcode=THEATRE': 'Theatre/Dance' },
-    { '&eventcode=COMEDY': 'Comedy' },
-    { '&eventcode=EXHIB': 'Exhibitions and Attractions' },
-    { '&eventcode=KIDS': 'Kids/Family event' },
-    { '&eventcode=BARPUB': 'Bar/Pub event' },
-    { '&eventcode=LGB': 'Gay/Lesbian event' },
-    { '&eventcode=SPORT': 'Sporting event' },
-    { '&eventcode=ARTS': 'The Arts' },
+    { code:  '',
+      value: 'All'},
+    { code: '&eventcode=FEST', 
+      value: 'Festivals' },
+    { code: '&eventcode=LIVE', 
+      value: 'Live music' },
+    { code: '&eventcode=CLUB', 
+      value: 'Clubbing/Dance music' },
+    { code: '&eventcode=DATE', 
+      value: 'Dating event' },
+    { code: '&eventcode=THEATRE', 
+      value: 'Theatre/Dance' },
+    { code: '&eventcode=COMEDY', 
+      value: 'Comedy' },
+    { code: '&eventcode=EXHIB', 
+      value: 'Exhibitions and Attractions' },
+    { code: '&eventcode=KIDS', 
+      value: 'Kids/Family event' },
+    { code: '&eventcode=BARPUB', 
+      value: 'Bar/Pub event' },
+    { code: '&eventcode=LGB', 
+      value: 'Gay/Lesbian event' },
+    { code: '&eventcode=SPORT', 
+      value: 'Sporting event' },
+    { code: '&eventcode=ARTS', 
+      value: 'The Arts' },
   ]
-  
-  // const [ selectValue, setSelectValue ] = useState('All')
+
+  const optionValues = eventTypes.map(type => type.value)
 
   const typeChange = (e) => {
-    setEventCode(e.target.value)
-    console.log(eventCode)
-    setSelectValue(e.target)
-    console.log(e.target)
+    const findObject = eventTypes.find(type => type.value === e.target.value)
+    setEventCode(findObject.code)
+    setSelectValue(e.target.value)
   }
 
   const dateChange = (date) => {
@@ -42,7 +56,8 @@ const FiltersLucky = ({ eventCode, setEventCode, selectedDate, setSelectedDate, 
       <div className="type-container">
         <label htmlFor="selectEventType">Type</label>
         <select className="filter-input" onChange={typeChange} value={selectValue} name="selectEventType">
-          {eventTypes.map(type => <option key={Object.keys(type)} value={Object.keys(type)} id={Object.values(type)}>{Object.values(type)}</option>)}
+          {/* {eventTypes.map(type => <option key={Object.keys(type)} value={Object.keys(type)} id={Object.values(type)}>{Object.values(type)}</option>)} */}
+          {optionValues.map(type => <option key={type} value={type}>{type}</option>)}
         </select>
       </div>
       <div className="date-container">
