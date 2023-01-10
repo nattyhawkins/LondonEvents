@@ -23,7 +23,7 @@ const Filters = ({ eventCode, setEventCode, checked, setChecked, search, setSear
 
   return (
     <div className="filters">
-      <Container className='mt-4 filters-container'>
+      <Container className='pt-4 filters-container '>
             <FiltersLucky eventCode={eventCode} setEventCode={setEventCode} selectedDate={selectedDate} setSelectedDate={setSelectedDate} setMinDate={setMinDate} setMaxDate={setMaxDate} selectValue={selectValue} setSelectValue={setSelectValue} />
             <div className='filters-right'>
               <div className="tickets-container">
@@ -32,7 +32,7 @@ const Filters = ({ eventCode, setEventCode, checked, setChecked, search, setSear
               </div>
               <div className="search-container">
                 <form onSubmit={handleSearch}>
-                  <input className="filter-input" type="search" id="search" name="search" onChange={handleInput} value={input}  placeholder='Search Events'/>
+                  <input className="filter-input p-2" type="search" id="search" name="search" onChange={handleInput} value={input}  placeholder='Search Events'/>
                 </form>
               </div>
             </div>

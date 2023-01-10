@@ -52,16 +52,17 @@ By this point, the Events Index page was developed enough to connect each event 
 
 The ‘I’m feeling lucky’ page was next on my to do list. This leveraged the single event component but fed in a random ‘lucky’ ID as a prop. The ID was generated from a get request for all non-sold-out events with a useEffect that set a randomly selected ID in state.
 ```
-useEffect(() => {
+  useEffect(() => {
     const getEvents = async () => {
       try {
         const apiKey = 'api_key=7544cdafe70d0b9d8a15ae17a08a53fd'
         const ldnCoord = 'latitude=51.509865&longitude=-0.118092&radius=40'
-        const { data } = await axios.get(`https://www.skiddle.com/api/v1/events/?
-          ${apiKey}&${ldnCoord}&ticketsavailable=true${eventCode}${minDate}${maxDate}`)
+        const { data } = await axios.get(`https://www.skiddle.com/api/v1/events/
+          ?${apiKey}&${ldnCoord}&ticketsavailable=true${eventCode}${minDate}${maxDate}`)
         setEvents(data.results)
       } catch (err) {
         console.log(err)
+        setLuckyError(err.message ? err.message : err)
       }
     }
     getEvents()
@@ -94,12 +95,19 @@ return (
   <>
     <TheNavbar />
     <div className="filters">
-      <Container className="filters-container mt-5">
-          <FiltersLucky eventCode={eventCode} setEventCode={setEventCode} selectedDate={selectedDate}
-            setSelectedDate={setSelectedDate} setMinDate={setMinDate} setMaxDate={setMaxDate} />
+      <Container className="filters-container pt-4">
+        <FiltersLucky eventCode={eventCode} setEventCode={setEventCode} selectedDate={selectedDate}
+          setSelectedDate={setSelectedDate} setMinDate={setMinDate} setMaxDate={setMaxDate} />
       </Container>
     </div>
-    {luckyId.length > 0 && <EventSingle luckyId={luckyId} />}
+    {!luckyError ? 
+      luckyId.length > 0 ?
+        <EventSingle luckyId={luckyId} />
+      :
+      <Spinner className="my-5" animation="border" variant="warning" />
+    :
+    <h1>Uh oh! Something went wrong...</h1>
+    }
   </>
 )
 ```
