@@ -97,11 +97,10 @@ const EventSingle = ({ luckyId }) => {
                   src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyALd_bYvfEc51wNsGxL8ZHFHjYk4aHi_mA&q=${event.venue.latitude},${event.venue.longitude}`}>
                   </iframe>
                 </div>
-              
               </Row>
             </>
             :
-            <h1>something went wrong</h1>
+            <h1>Uh oh! Something went wrong...</h1>
           }
         </Container>
         <Footer />
