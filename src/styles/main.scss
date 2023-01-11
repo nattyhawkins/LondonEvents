@@ -25,10 +25,15 @@ $titlefont: dirtybrush;
   src: url(./DirtyBrush-BZYV.ttf);
 }
 
-body{
+body, html{
   text-align: center;
   background: repeating-linear-gradient(black, $NavColour, black 300vh);
   min-height: 100vh;
+  max-width: 100vw;
+}
+.events-row{
+  max-width: 100vw;
+
 }
 //The Navbar
 .TheNavbar{
