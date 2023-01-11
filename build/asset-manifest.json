@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.7cf2a289.css",
+    "main.css": "/static/css/main.a4bd4a10.css",
     "main.js": "/static/js/main.58897710.js",
     "static/media/festival1.jpg": "/static/media/festival1.1939995669e72bdbbaf8.jpg",
     "static/media/DirtyBrush-BZYV.ttf": "/static/media/DirtyBrush-BZYV.3a58541f797c3895397a.ttf",
@@ -9,11 +9,11 @@
     "static/media/Roboto-Bold.ttf": "/static/media/Roboto-Bold.f80816a5455d171f948d.ttf",
     "static/media/Roboto-Light.ttf": "/static/media/Roboto-Light.333da16a3f3cc391d087.ttf",
     "index.html": "/index.html",
-    "main.7cf2a289.css.map": "/static/css/main.7cf2a289.css.map",
+    "main.a4bd4a10.css.map": "/static/css/main.a4bd4a10.css.map",
     "main.58897710.js.map": "/static/js/main.58897710.js.map"
   },
   "entrypoints": [
-    "static/css/main.7cf2a289.css",
+    "static/css/main.a4bd4a10.css",
     "static/js/main.58897710.js"
   ]
 }
