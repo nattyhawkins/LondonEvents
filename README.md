@@ -1,7 +1,7 @@
 # Discover London
 #### Pair project  |  2 days  |  Front end
 
-A React.js application leveraging Skiddle’s open API to display upcoming events in London with all the relevant filters, event information, an embedded map with the venue location, and a link to find tickets. It includes an ‘I’m feeling lucky’ feature that displays a random event which can be  filtered further by date and event type.
+A React.js application leveraging Skiddle’s open API to find upcoming events in London with all the relevant filters, event information, an embedded map with the venue location, and a link to find tickets. It includes an ‘I’m feeling lucky’ feature that displays a random event which can be  filtered further by date and event type.
 
 [View site here](https://discoverlondon.netlify.app) - Try it out on your mobile too
 
