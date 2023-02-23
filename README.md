@@ -23,6 +23,11 @@ A React.js application leveraging Skiddle’s open API to find upcoming events i
 - React date picker
 
 
+## Code Installation
+- Clone or download the repo
+- `yarn` to install yarn in Terminal
+- `yarn start` to run in browser
+
 
 ## Brief
 The project must:
